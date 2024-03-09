@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px; /* To handle small viewport adjustments */
+}
+
+.container {
+    max-width: 600px;
+    width: 100%; /* Ensures it doesn't exceed the viewport width on smaller screens */
+    margin: auto; /* This is now more about ensuring max width is respected */
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative; /* For further styling or positioning adjustments if needed */
+}
+
+h1, h2 {
+    color: #005A9C; /* High contrast color for better readability */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button, input[type="submit"] {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+a {
+    display: inline-block;
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a:hover {
+    background-color: #007B9C;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+/* Accessibility Enhancements */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   /* High Contrast Mode */
+   h1, h2, a, button, input[type="submit"] {
+       color: yellow;
+       background-color: black;
+   }
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}

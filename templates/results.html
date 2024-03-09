@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detection Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Phishing Detection Result</h1>
+        </header>
+        <article>
+            <p>Name: {{ name }}</p>
+            <p>Text: {{ text }}</p>
+            <p>Probability of being phishing: {{ probability }}%</p>
+            <nav>
+                <a href="/">Try again</a>
+            </nav>
+        </article>
+    </main>
+</body>
+</html>

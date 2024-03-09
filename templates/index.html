@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Check Text for Phishing Probability</h1>
+        </header>
+        <form method="POST" aria-labelledby="formHeading">
+            <article class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </article>
+            <article class="form-group">
+                <label for="text">Text:</label>
+                <textarea id="text" name="text" rows="4" required></textarea>
+            </article>
+            <button type="submit">Check</button>
+        </form>
+    </main>
+</body>
+</html>
