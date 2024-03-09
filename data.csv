@@ -1,25 +1,21 @@
 text,label
-"Your account has been compromised. Please verify your credentials here: fakeurl.com","phishing"
-"Dear customer, your order has been shipped. Track it at realsite.com/tracking","legitimate"
-"Congratulations! You've won a $1000 gift card. Claim now at scamlink.com","phishing"
-"Your subscription has been renewed successfully.","legitimate"
-"Urgent: Your account will be suspended. Update your payment details at scam-payment.com","phishing"
-"Hello, your recent payment was declined. Please update your payment method.","legitimate"
-"Warning: Unusual activity detected. Verify your account by visiting notabank.com","phishing"
-"Meeting is scheduled for 3 PM today. Please let me know if the time works for you.","legitimate"
-"Security Alert: Multiple login attempts detected. Verify your identity at phishing-site.com","phishing"
-"Thank you for your purchase! Your receipt is attached.","legitimate"
-"Action Required: Confirm your email address now at emailconfirm.com","phishing"
-"Reminder: Your appointment with Dr. Smith is tomorrow at 10 AM.","legitimate"
-"Final Notice: Failure to update your login details will result in account termination. Visit updateaccount.com now","phishing"
-"Welcome to our newsletter! We hope you enjoy the latest updates and discounts.","legitimate"
-"Warning: You have a new message regarding your account security from securityteam.com","phishing"
-"Your flight itinerary is ready. Check-in is available 24 hours before your departure.","legitimate"
-"Exclusive Offer: You've been selected for a 50% discount on our premium membership. Redeem at membersite.com","phishing"
-"Survey Invitation: We value your feedback. Please complete this short survey about our services.","legitimate"
-"Alert: Your package delivery has been delayed. Log in at parcelservice.com to track your shipment.","phishing"
-"Your monthly statement is now available. Please log in to your account to view the details.","legitimate"
-"Security Update: A new login to your account was detected. If this wasn't you, visit securitycheck.com immediately","phishing"
-"Happy Birthday! As our valued customer, we've sent you a special gift. Check it out in your profile.","legitimate"
-"Important Account Notification: Suspicious activity has been detected. Secure your account at secureaccount.com","phishing"
-"Upcoming Event: Join us for an exclusive webinar next week. Register now to secure your spot.","legitimate"
+"Immediate Action Required: Your account has been breached. Reset your password within 24 hours at this link: dangerlink.com",1
+"Enjoy a 70% discount on our annual subscription plan. Offer valid until midnight: dealsite.com/offer",0
+"Warning: Your email account has been accessed from an unknown device. Confirm your identity here: unknownaccess.com",1
+"Your recent order with us has been canceled due to an issue with payment processing. Please reorder at oursite.com/orders",0
+"Confirm Your Email: Please click the link below to complete your sign-up process: verify-emailnow.com",1
+"Join our loyalty program and start earning points today. Sign up at rewardsite.com/member",0
+"Unauthorized Login Attempt Detected. Secure your account immediately at fake-securitysite.com",1
+"We've updated our privacy policy. Read the full details at oursite.com/privacy",0
+"Your package has been dispatched. Track its progress here: fakeshipping.com/track",1
+"Book your next holiday with us and get a 20% early bird discount. Browse offers at travelsite.com/holidays",0
+"Fraud Alert: Suspicious transactions detected on your account. Verify these at fakebankalert.com",1
+"Discover the new features in the latest update. Learn more and download at techsite.com/update",0
+"Free Lifetime Access: Be one of the first 100 to sign up at scamproduct.com/free",1
+"We're hosting a free webinar on investment strategies. Reserve your spot at investwebinar.com/register",0
+"Last Chance: Your cloud storage is full. Avoid service interruption by purchasing more space at cloudupgrade.com",1
+"Experience the ultimate in home entertainment with our new streaming service. Start your free trial at streamingservice.com",0
+"Your account is at risk! Immediate verification required at youraccountsafety.com",1
+"Thank you for staying with us! We appreciate your loyalty. Check your loyalty status at hotelsite.com/loyalty",0
+"Claim Your Inheritance: A large sum has been left for you. Confirm your details at inheritancescam.com",1
+"Our annual customer feedback survey is live. Tell us what you think and enter a draw to win a prize at feedbacksite.com",0
