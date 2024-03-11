@@ -533,3 +533,92 @@ text,label
 "Emergency Contact Update: Update your emergency contact details now at emergencycontactupdate.com", 1
 "Action Required: Upgrade to the latest version of our app to continue using it at appversionupgrade.com", 1
 "Notification: You have a pending account alert. Address it now at pendingaccountalert.com", 1
+"Subject: Important Update Regarding Your Dropbox Account",1
+"Hi Jessica, Hope you're doing well! Just a quick reminder about our team meeting tomorrow at 10 AM. See you there! - Sarah Jones",0
+"Congratulations! You've been selected to win a brand new iPhone! Claim yours before they run out: [Malicious Link]",1
+"Your order confirmation for Amazon is attached. See you soon! - Amazon.com",0
+"Your Netflix subscription payment failed. Please update your payment information to avoid interruption: [Phishing Link]",1
+"Hey there! Just a friendly reminder to pick up your dry cleaning today. We're closing at 7 PM. - Sunshine Cleaners",0
+"Urgent action required! Your bank account has been restricted due to suspicious activity. Verify your information here: [Deceptive Link]",1
+"Didn't catch you at the door today. Your package is at the post office. Please come pick it up within 5 days: [Address]",0
+"We've detected unusual login attempts to your Gmail account. Click here to secure your account: [Phishing Link]",1
+"Hi Michael, Attached is the report you requested. Please let me know if you have any questions. Thanks, David",0
+"Subject: Free Trial Offer! Enjoy premium access to [Streaming Service] for 1 month. Click here to activate: [Suspicious Link]",1
+"Your monthly bill is now available online. Please click here to access your statement: [Bank Website Link]",0
+"Attention! Your social security number has been linked to fraudulent activity. Call us immediately to resolve this issue: [Fake Phone Number]",1
+"Happy work anniversary, William!  Thank you for your dedication to the team. - [Company Management]",0
+"Your credit card has been blocked due to unusual spending patterns. Please verify your recent transactions: [Malicious Link]",1
+"Just a heads up, your car's registration is about to expire. Renew online for your convenience: [State Department of Motor Vehicles Link]",0
+"We're experiencing a temporary technical issue with your email account. Please click here to verify your identity: [Phishing Link]",1
+"Hey [Name], how's it going? We'd love to hear your feedback on our recent service. Click here to take a short survey: [Company Survey Link]",0
+"Limited-time offer! Get 20% off your entire purchase at [Store Name]. Use code 'SPRING SALE' at checkout: [Store Website Link]",0
+"You've received a new voicemail message! Click here to listen: [Phishing Link]",1
+"Your order confirmation for Macy's is attached. See you soon! - Macy's",0
+"Subject: Your Password Reset Request on [Social Media Platform]",1
+"Hi David, Hope you're doing well! Just wanted to check in and see if you're interested in grabbing coffee sometime this week. Let me know! - Sarah",0
+"Congratulations! You've won a trip to the Bahamas in our exclusive sweepstakes! Claim your prize now: [Deceptive Link]",1
+"Your flight confirmation for Delta Airlines has been updated. Please review the attached document for details.",0
+"We noticed some suspicious activity on your PayPal account. Please verify your login information: [Phishing Link]",1
+"Hi Emma, Hope you're doing well! Just a quick reminder about our team meeting tomorrow at 10 AM. See you there! - [Manager's Name]",0
+"Subject: Win a Free Gift Card! Simply click here to enter our daily raffle: [Suspicious Link]",1
+"Your recent order from Target has shipped! Track your package here: [Target Website Link]",0
+"Your Microsoft Office 365 subscription is about to expire. Renew your subscription now to avoid interruption: [Phishing Link]",1
+"Hi Alex, This is John from your IT department. There seems to be an issue with your company laptop. Please click here to run a diagnostic scan: [Malicious Link]",1
+"Happy Birthday, William! Wishing you a wonderful day from all of us at [Company Name].",0
+"Your bank statement for the month of February is now available online. Please click here to view: [Bank Link]",0
+"Attention! Your social security number has been suspended due to suspicious activity. Call us immediately to resolve this issue: [Fake Phone Number]",1
+"We're having a sale on all summer clothing! Shop now and save up to 50% off: [Retailer Website Link]",0
+"You've received a new email from [Unknown Sender]. Please be cautious of opening attachments or clicking links from unknown senders.",0
+"Dear user, your account will be suspended unless you verify your details immediately at notrealbank.com/verify.",1
+"Hi there, don't forget our meeting at 10 AM tomorrow. Cheers, John.",0
+"Your package is on the way, but there was a problem with your payment. Please update your payment information here: fakepaymentportal.com",1
+"Looking forward to our dinner reservation this Friday. It's going to be a great night!",0
+"Alert: Your email account has been accessed from a new device. If this wasn't you, visit securityupdate.com immediately.",1
+"Hey! How's it going? We should catch up soon, it's been too long.",0
+"Urgent: Your subscription has been cancelled due to a billing issue. Please update your billing info promptly at scamsubscription.com.",1
+"Good morning, team. Please review the attached project plan and provide your feedback by EOD. Best, Sarah.",0
+"Final notice: Your account has been compromised. Click this link to reset your password now: fakeaccountsecurity.com.",1
+"Happy Birthday, Mark! Hope you have a fantastic day filled with joy and laughter.",0
+"Congratulations! You've won a $500 gift card. Claim your prize now at notarealprize.com before it expires.",1
+"Reminder: Your dentist appointment is scheduled for next Monday at 3 PM.",0
+"Security Alert: We've detected unusual activity on your account. Verify your identity here: phishingattempt.com",1
+"Can't wait to see you at the family reunion next month. It's going to be so much fun!",0
+"Action Required: Confirm your recent purchase by logging into your account at fakepurchaseverification.com.",1
+"Our records indicate that your vehicle warranty is about to expire. Extend your warranty today at extendedwarrantyfraud.com.",1
+"Thank you for shopping with us. Your order #12345 has been shipped and should arrive within 3-5 business days.",0
+"Dear customer, due to a system error, your recent payment was not processed. Please resubmit at paymenterrorresolve.com.",1
+"Join us for a free webinar on personal finance this Thursday at 8 PM. Register now to secure your spot.",0
+"Your account has been selected for a free upgrade! Click here to claim your upgrade: luckywinnerupgrade.com",1
+"Dear valued customer, we've noticed multiple login attempts on your account. Secure it now at secureyouraccountnow.com.",1
+"Thank you for your recent order with us. Please find your invoice attached.",0
+"Warning: Your email is about to reach its storage limit. Clear space now at cleanupyourinbox.com to avoid disruption.",1
+"This is a reminder that your club membership dues are overdue. Please settle your account at your earliest convenience.",0
+"Your trial period is about to end. Avoid service interruption by updating your subscription at upgradenowservice.com.",1
+"Looking forward to our book club meeting next week. Don't forget to bring your book!",0
+"Congratulations, you've been selected for an exclusive offer. Redeem your offer now at exclusiveofferlink.com.",1
+"Don't miss our end-of-season sale with up to 50% off. Shop now on our website.",0
+"Immediate action required: We've detected suspicious activity on your credit card. Verify your transactions at verifytransactionsnow.com.",1
+"Please join us in celebrating the retirement of our esteemed colleague. RSVP by replying to this email.",0
+"Unauthorized login attempt detected. If this wasn't you, secure your account immediately at accountsecurityalert.com.",1
+"Your feedback is important to us. Please take a moment to complete our survey.",0
+"Your subscription has been cancelled due to a problem with your payment method. Reactivate now at fakepaymentlink.com.",1
+"Mark your calendars for the annual company picnic next month. More details to follow!",0
+"Warning: Your parcel delivery was unsuccessful. Reschedule your delivery at fakedeliveryservice.com.",1
+"Next week's meeting agenda is attached. Please review and provide your input.",0
+"Claim your free smartphone now by participating in our quick survey at getsurveyreward.com. Hurry, limited offer!",1
+"We're updating our privacy policy. Please review the new policy on our website.",0
+"Your account verification is pending. Confirm your details at accountverificationpending.com to avoid suspension.",1
+"Reminder: Your library books are due next week. Avoid late fees by returning them on time.",0
+"Invoice #45678 for your recent purchase is attached. Please ensure payment is processed by the due date.",0
+"Protect your account from theft. Update your security settings today at securityupdatephish.com.",1
+"Thank you for attending our recent event. We hope you found it valuable and look forward to your continued support.",0
+"Your online access has been temporarily suspended due to suspicious activity. Please verify your identity at phishinglink.com.",1
+"We're thrilled to announce our new product launch next month. Stay tuned for more details!",0
+"Your account needs immediate attention. Resolve the issue now at fixyouraccountnow.com.",1
+"Join us for a volunteer day to give back to our community. Sign up by replying to this email.",0
+"Final reminder: Renew your subscription before it's too late at renewalwarning.com. Don't miss out!",1
+"Your recent payment was declined. To avoid service interruption, please update your payment details.",0
+"Warning: You are the last step away from securing your account. Complete the verification process at urgentverificationlink.com.",1
+
+
+
