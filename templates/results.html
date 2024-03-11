@@ -3,22 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phishing Detection Result</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Phishing Detection</title>
+    <!-- Linking external CSS for styling -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='email.css') }}">
+    <!-- Including jQuery for simplified JavaScript operations -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Linking external JavaScript file that handles form submission and dynamic content -->
+    <script defer src="{{ url_for('static', filename='test.js') }}"></script>
 </head>
 <body>
-    <main class="container">
+    <main class="container" role="main">
         <header>
-            <h1>Phishing Detection Result</h1>
+            <h1 id="formHeading">Check Text for Phishing Probability</h1>
         </header>
-        <article>
-            <p>Subject: {{ name }}</p>
-            <p>Message: {{ text }}</p>
-            <p>Probability of being phishing is: {{ probability }}%</p>
-            <nav>
-                <a href="/">Try again</a>
-            </nav>
-        </article>
+        <!-- Form for user input with two fields: subject and message -->
+        <form id="phishingForm" aria-labelledby="formHeading">
+            <div class="form-group">
+                <label for="subject">Subject: </label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+        <!-- Placeholder for displaying an analyzing message -->
+        <div id="analyzingMessage" style="display:none;" aria-live="polite">Analyzing results, please wait<span id="dots"></span></div>
+        <!-- Placeholder for displaying results -->
+        <div id="result" style="display:none;" aria-live="polite">
+            <div>
+                <p><span class="bold-text">Subject:</span> <span id="resultSubject"></span></p>
+                <p><span class="bold-text">Message:</span> <span id="resultMessage"></span></p>
+                <p>Probability of being phishing is: <span id="resultProbability"></span>%</p>
+                <nav>
+                    <a href="/" role="button">Try again</a>
+                </nav>
+            </div>
+        </div>
     </main>
 </body>
 </html>
