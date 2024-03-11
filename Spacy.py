@@ -1,5 +1,5 @@
 # Importing necessary libraries and modules
-from flask import Flask, render_template, \
+from flask import Flask, render_template, jsonify, \
     request  # Flask for web app development, render_template for rendering HTML, request for handling requests
 import pandas as pd  # pandas for data manipulation and analysis
 import re  # re for regular expression operations
@@ -11,6 +11,8 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier 
 from sklearn.model_selection import train_test_split, \
     GridSearchCV  # Utilities for splitting data and hyperparameter tuning
 from sklearn.pipeline import make_pipeline  # Utility to create a pipeline of transforms with a final estimator
+
+from app import model
 
 # Loading the spaCy English language model for NLP tasks
 nlp = spacy.load("en_core_web_sm")
@@ -104,6 +106,9 @@ def train_model(dataset, model_type='logistic_regression'):
     return cv.best_estimator_
 
 
+
+
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     """
@@ -111,24 +116,36 @@ def index():
     - On POST request (form submission), preprocesses the user input, makes a prediction, and renders the results.
     - On GET request, renders the homepage with the input form.
     """
+
     if request.method == 'POST':
-        # Getting user input from the form
+        # Check if the request is AJAX
+        if request.headers.get('Content-Type') == 'application/json':
+            # Parsing JSON data from the request
+            data = request.get_json()
+            subject = data['subject']
+            message = data['message']
+
+            # Combine subject and message or process them as needed for your model
+            combined_input = f"Subject: {subject}\nMessage: {message}"
+            preprocessed_text = preprocess_text(combined_input)
+            prediction_prob = model.predict_proba([preprocessed_text])[0]
+            phishing_prob = prediction_prob[1] * 100
+
+            # Return JSON response containing the probability
+            return jsonify(probability="{:.2f}".format(phishing_prob))
+
+        # Fallback for non-AJAX POST requests, if necessary
         user_input = request.form.get('text')
-        # Preprocessing the input text
         preprocessed_text = preprocess_text(user_input)
-        # Making a prediction with the trained model and calculating the probability of phishing
         prediction_prob = model.predict_proba([preprocessed_text])[0]
         phishing_prob = prediction_prob[1] * 100
-        # Rendering the results page with the prediction probability
-        return render_template('results.html', text=user_input, probability="{:.2f}%".format(phishing_prob))
-    # Rendering the homepage with the input form
+        return render_template('index.html', probability="{:.2f}%".format(phishing_prob))
+
+    # Rendering the homepage with the input form for GET requests
     return render_template('index.html')
 
 
+# Your app initialization and model training here...
+
 if __name__ == '__main__':
-    # Loading and preprocessing the dataset
-    dataset = load_and_preprocess_data()
-    # Training the model (change model_type as needed)
-    model = train_model(dataset, model_type='random_forest')
-    # Running the Flask application
     app.run(debug=True)
