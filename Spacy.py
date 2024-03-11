@@ -1,107 +1,134 @@
-# Flask is a micro web framework for Python, allowing you to build web applications easily.
-from flask import Flask, render_template, request
+# Importing necessary libraries and modules
+from flask import Flask, render_template, \
+    request  # Flask for web app development, render_template for rendering HTML, request for handling requests
+import pandas as pd  # pandas for data manipulation and analysis
+import re  # re for regular expression operations
+import spacy  # spaCy for advanced NLP tasks
+# Importing machine learning models and utilities from scikit-learn
+from sklearn.feature_extraction.text import TfidfVectorizer  # TF-IDF transformer for text vectorization
+from sklearn.linear_model import LogisticRegression  # Logistic Regression model
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier  # Ensemble models
+from sklearn.model_selection import train_test_split, \
+    GridSearchCV  # Utilities for splitting data and hyperparameter tuning
+from sklearn.pipeline import make_pipeline  # Utility to create a pipeline of transforms with a final estimator
 
-# pandas is a library for data manipulation and analysis, particularly offering data structures and operations for manipulating numerical tables and time series.
-import pandas as pd
-
-# re is the regular expression library in Python, used for matching text patterns.
-import re
-
-# spaCy is an open-source library for advanced Natural Language Processing (NLP) in Python. It's designed for practical NLP tasks with pre-trained models.
-import spacy
-
-# TfidfVectorizer converts a collection of raw documents into a matrix of TF-IDF features. It's part of scikit-learn, a machine learning library.
-from sklearn.feature_extraction.text import TfidfVectorizer
-
-# LogisticRegression is a linear model for classification rather than regression. It is also part of scikit-learn.
-from sklearn.linear_model import LogisticRegression
-
-# train_test_split is a function in scikit-learn to split datasets into training and testing sets.
-# GridSearchCV is used for hyperparameter tuning, finding the best parameters for a model.
-from sklearn.model_selection import train_test_split, GridSearchCV
-
-# make_pipeline is a utility to create a pipeline of transforms with a final estimator, simplifying the model building process.
-from sklearn.pipeline import make_pipeline
-
-from app import model
-
-# Load SpaCy's English model. This model has been trained on web content and includes vocabulary, syntax, entities, and word vectors.
+# Loading the spaCy English language model for NLP tasks
 nlp = spacy.load("en_core_web_sm")
 
-# Initialize the Flask application. This object implements a WSGI application and acts as the central object.
+# Initializing the Flask application
 app = Flask(__name__)
+
 
 def preprocess_text(text):
     """
-    Text preprocessing function that uses spaCy for NLP tasks like tokenization and lemmatization.
+    Preprocesses input text for NLP tasks.
+    - Uses regular expressions to replace URLs and email addresses with placeholders.
+    - Utilizes spaCy for tokenization, lemmatization, and removal of stop words.
+    - Converts tokens to lowercase.
     """
-    # Use regular expressions to replace URLs and email addresses in the text with placeholders.
+    # Replacing URLs with a placeholder
     text = re.sub(r'https?://\S+|www\.\S+', ' urlplaceholder ', text)
+    # Replacing email addresses with a placeholder
     text = re.sub(r'\S*@\S*\s?', ' emailplaceholder ', text)
 
-    # Process the text with spaCy, tokenizing it and performing lemmatization and stop word removal.
+    # Tokenizing and processing the text using spaCy
     doc = nlp(text)
-    print(doc)
+    # Building a list of lemmatized, lowercase tokens that are not stop words and are alphabetic
     clean_tokens = [token.lemma_.lower() for token in doc if not token.is_stop and token.is_alpha]
+    # Joining processed tokens back into a single string
     return " ".join(clean_tokens)
+
 
 def load_and_preprocess_data(filename='data.csv'):
     """
-    Load a dataset from a CSV file and preprocess the text.
+    Loads and preprocesses dataset from a CSV file.
+    - Reads data into a pandas DataFrame.
+    - Applies text preprocessing to the 'text' column.
+    - Converts the 'label' column to integer type.
     """
-    # Use pandas to read the CSV file.
+    # Reading the dataset from a CSV file into a pandas DataFrame
     dataset = pd.read_csv(filename)
-    # Apply the preprocess_text function to each text in the dataset.
+    # Applying the text preprocessing function to each item in the 'text' column
     dataset['text'] = dataset['text'].apply(preprocess_text)
-    # Convert the 'label' column to integer type.
+    # Converting the 'label' column to integer type for model training
     dataset['label'] = dataset['label'].astype(int)
     return dataset
 
-def train_model(dataset):
+
+def train_model(dataset, model_type='logistic_regression'):
     """
-    Train a logistic regression model on the preprocessed text data.
+    Trains a machine learning model on the preprocessed dataset.
+    - Splits the dataset into training and testing sets.
+    - Depending on the model_type parameter, selects a Logistic Regression, Random Forest, or Gradient Boosting model.
+    - Constructs a pipeline with TF-IDF vectorization and the chosen model.
+    - Uses GridSearchCV for hyperparameter tuning.
+    - Returns the trained model with the best parameters found.
     """
-    # Split the dataset into features (X) and target variable (y).
+    # Splitting the dataset into features (X) and target variable (y)
     X = dataset['text']
     y = dataset['label']
-    # Split the data into training and testing sets.
+    # Further splitting the data into training and testing sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    # Create a pipeline that first transforms the text data into TF-IDF vectors, then applies logistic regression.
+    # Selecting the model based on model_type
+    if model_type == 'logistic_regression':
+        model = LogisticRegression()
+    elif model_type == 'random_forest':
+        model = RandomForestClassifier(n_estimators=100)
+    elif model_type == 'gradient_boosting':
+        model = GradientBoostingClassifier(n_estimators=100)
+
+    # Creating a pipeline with TF-IDF vectorization and the selected model
     pipeline = make_pipeline(
         TfidfVectorizer(max_features=5000, ngram_range=(1, 3)),
-        LogisticRegression()
+        model
     )
-    # Define parameters for GridSearchCV to tune.
+
+    # Defining hyperparameters for GridSearchCV
     parameters = {
         'tfidfvectorizer__max_features': [3000, 5000],
         'tfidfvectorizer__ngram_range': [(1, 2), (1, 3)],
-        'logisticregression__C': [0.1, 1, 10]
     }
 
-    # Perform grid search with cross-validation to find the best parameters.
+    # Adding model-specific hyperparameters
+    if model_type == 'logistic_regression':
+        parameters['logisticregression__C'] = [0.1, 1, 10]
+
+    # Using GridSearchCV for hyperparameter tuning with cross-validation
     cv = GridSearchCV(pipeline, parameters, cv=5)
+    # Fitting the model to the training data
     cv.fit(X_train, y_train)
+    # Printing the best parameters found
     print(f"Best parameters: {cv.best_params_}")
+    # Returning the best model found
     return cv.best_estimator_
 
-# Define the route for the web application's homepage.
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    """
+    Defines the behavior of the homepage.
+    - On POST request (form submission), preprocesses the user input, makes a prediction, and renders the results.
+    - On GET request, renders the homepage with the input form.
+    """
     if request.method == 'POST':
-        # Get user input from the form.
-        user_name = request.form.get('name')
+        # Getting user input from the form
         user_input = request.form.get('text')
-        # Preprocess the input and make a prediction with the trained model.
+        # Preprocessing the input text
         preprocessed_text = preprocess_text(user_input)
+        # Making a prediction with the trained model and calculating the probability of phishing
         prediction_prob = model.predict_proba([preprocessed_text])[0]
-        # Calculate the probability of the text being phishing.
         phishing_prob = prediction_prob[1] * 100
-
-        # Render the results page with the prediction.
-        return render_template('results.html', name=user_name, text=user_input, probability="{:.2f}%".format(phishing_prob))
+        # Rendering the results page with the prediction probability
+        return render_template('results.html', text=user_input, probability="{:.2f}%".format(phishing_prob))
+    # Rendering the homepage with the input form
     return render_template('index.html')
 
+
 if __name__ == '__main__':
-    # Run the Flask application.
+    # Loading and preprocessing the dataset
+    dataset = load_and_preprocess_data()
+    # Training the model (change model_type as needed)
+    model = train_model(dataset, model_type='random_forest')
+    # Running the Flask application
     app.run(debug=True)
