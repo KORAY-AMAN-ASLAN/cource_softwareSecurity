@@ -220,7 +220,11 @@ def index():
 if __name__ == '__main__':
     # Train and save the model, or load an existing model, then run the Flask app.
     # This section can be commented out or modified based on the deployment strategy to avoid retraining on every launch.
-    dataset = load_and_preprocess_data('data.csv')
-    model = train_model(dataset, 'logistic_regression')
-    joblib.dump(model, MODEL_PATH)
+   # dataset = load_and_preprocess_data('data.csv')
+    # logistic_regression_model.pkl
+    # mrandom_forest_model.pkl
+    # gradient_boosting_model.pkl
+
+    #model = train_model(dataset, 'logistic_regression')
+   # joblib.dump(model, MODEL_PATH)
     app.run(debug=True)
