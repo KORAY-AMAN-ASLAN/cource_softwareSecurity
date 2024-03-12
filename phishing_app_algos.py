@@ -1,4 +1,71 @@
+"""
+This Python script is designed to create a web application using Flask that classifies email text as either legitimate,
+ or phishing.
+It utilizes machine learning models that have been pre-trained to identify characteristics of phishing attempts within,
+email content.
+The script demonstrates how to load these models, use them for classification, and then serve the results through a web,
+ interface. It is an integration of natural language processing (NLP), machine learning (ML),
+and web development to provide an interactive platform for email classification.
+
+
+
+Key Components and Workflow:
+
+1. Library Imports:
+The script begins by importing necessary libraries for web development (Flask),
+data manipulation (Pandas), NLP (spaCy), machine learning (Scikit-learn, joblib for model loading),
+and visualization (matplotlib for optional plotting).
+
+2. Model Loading:
+Pre-trained models for Logistic Regression,
+Random Forest, and Gradient Boosting are loaded from disk.
+These models are assumed to be trained on a dataset where email texts are labeled as 'legitimate' or 'phishing',
+learning from features extracted via NLP techniques.
+
+3. Email Text Preprocessing:
+A function 'preprocess_text' is defined to clean and normalize the input email texts,
+by removing or replacing URLs and email addresses, optionally filtering out non-alphanumeric characters and stopwords,
+and normalizing the text case.
+This preprocessing mimics the treatment of data during the model training phase and is crucial for making accurate predictions.
+
+4. Data Loading and Preprocessing for Training:
+Another function 'load_and_preprocess_data' automates the loading of new training data from a CSV file,
+ applying the preprocessing steps to the 'text' column, and ensuring the 'label' column is in the correct format.
+  This functionality is key for retraining models or evaluating their performance on new data.
+
+5. Model Training with Hyperparameter Optimization:
+The 'train_model' function orchestrates the training of a specified ML model on the preprocessed dataset,
+employing GridSearchCV for hyperparameter tuning to optimize model performance.
+This step is vital for fine-tuning models based on new data or different classification tasks.
+
+6. Flask Web Application Setup:
+Utilizing Flask, the script sets up a web application that can handle GET and POST requests.
+GET requests simply render the homepage, while POST requests accept submitted email texts, preprocess them,
+classify them using the loaded ML models, and return the classification probabilities as phishing or legitimate.
+
+7. Results Visualization and Output:
+Although primarily focused on serving predictions through a web interface,
+the script includes commented sections that suggest how one might extend it to visualize classification results using matplotlib.
+
+8. Execution and Model Management:
+In the script's main block, there's functionality for loading a dataset, training a model, and saving it to disk.
+This illustrates how the web application's underlying ML model,
+can be updated or replaced without modifying the core application logic.
+
+Overall, this script exemplifies a practical application of combining NLP and ML for email classification,
+ within a web-based interface, showcasing a pipeline from model training to real-time prediction serving.
+
+
+ Authour:
+ Koray Aman Arabzadeh
+ Cource: Mjukvarusäkerhet Mittuniversitetet
+ Year: 2024-03-12
+
+"""
+
+
 # Import necessary libraries
+
 import os
 import warnings
 import joblib  # For model persistence, allowing saving and loading of the ML model.
