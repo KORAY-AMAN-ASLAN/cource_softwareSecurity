@@ -1,99 +1,156 @@
-* {
+/* Overall body and layout settings */
+body, html {
+    font-family: Arial, Helvetica, sans-serif; /* Simple, readable font */
+    background-color: #ffffff; /* Bright background for better contrast */
+    color: #000000; /* High contrast text color */
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    line-height: 1.5; /* Increased line height for readability */
+    letter-spacing: 0.12em; /* Increased letter spacing */
+}
+
+/* High visibility focus indicators */
+a, input, textarea, button {
+    outline: 3px solid #ffbf00; /* Bright outline for high visibility */
+    /* Added for removing default focus outline on Chrome */
+    outline-offset: 2px;
+}
+
+/* Main container for centered alignment */
+.container {
+    background-color: #eeeeee; /* Light gray for soft contrast */
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px; /* To handle small viewport adjustments */
-}
-
-.container {
-    max-width: 600px;
-    width: 100%; /* Ensures it doesn't exceed the viewport width on smaller screens */
-    margin: auto; /* This is now more about ensuring max width is respected */
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: relative; /* For further styling or positioning adjustments if needed */
-}
-
-h1, h2 {
-    color: #005A9C; /* High contrast color for better readability */
-}
-
-.form-group {
+header {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 20px;
     margin-bottom: 20px;
 }
 
-input[type="text"], textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+header h1 {
+    color: #0056b3; /* Accessible blue for headings */
+    font-size: 24px;
 }
 
-button, input[type="submit"] {
-    display: inline-block;
-    background-color: #4CAF50;
+/* Styling form groups for labels and inputs */
+.form-group label {
+    display: block;
+    margin-bottom: .5em;
+    color: #666;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #0056b3;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+}
+
+/* Additional styles for buttons and links */
+button, nav a {
+    background-color: #007bff; /* Accessible blue for buttons */
     color: white;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-}
-
-button:hover, input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-a {
     display: inline-block;
-    background-color: #008CBA;
-    color: white;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 4px;
     text-decoration: none;
-    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-a:hover {
-    background-color: #007B9C;
+button:hover, nav a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
-textarea:focus, input:focus {
-    outline: none;
+/* Analyzing Message Styles */
+#analyzingMessage {
+    display: none; /* Initially hidden */
+    position: fixed; /* Positioned relative to the viewport */
+    width: 70%; /* Adjusted width */
+    height: 10%; /* Adjusted height */
+    max-width: 500px; /* Ensures message box is not too wide */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering the box */
+    z-index: 1000;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center; /* Text centered inside the box */
+    font-weight: bold; /* Make text bold */
+
+    /* Flexbox for vertical and horizontal alignment */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack children vertically */
+
+    /* Additional styles for bolder text */
+    font-size: larger; /* Optional: Increase font size for more emphasis */
 }
 
-@media screen and (max-width: 768px) {
-    .container {
-        width: 90%;
-        padding: 15px;
-    }
+/* Result Styles */
+#result {
+    display: none; /* Initially hidden */
+    position: fixed; /* Positioned relative to the viewport */
+    width: 79%; /* Adjusted width */
+    max-width: 700px; /* Adjusts max width */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering the box */
+    z-index: 1000;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 8px rgba(0,0,0,0.1);
+    text-align: left; /* Text and elements aligned to the left */
+    /* Initial state for fade-in effect */
+    opacity: 0; /* Make it fully transparent initially */
+    transition: visibility 0s, opacity 0.5s linear; /* Adjust timing as needed */
 }
 
-/* Accessibility Enhancements */
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-   /* High Contrast Mode */
-   h1, h2, a, button, input[type="submit"] {
-       color: yellow;
-       background-color: black;
-   }
+/* Additional Style Adjustments */
+.bold-text {
+    font-weight: bold; /* Ensures specified texts are bolder */
 }
 
-textarea:focus, input:focus{
-    outline: none;
+#resultProbability {
+    color: red;
+    font-weight: bold; /* Ensures probability text is bold and colored */
+}
+
+nav a {
+    margin-top: 20px; /* Adjusts spacing above 'Try again' link */
+    display: block; /* Ensures link is block-level for better control */
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
