@@ -17,15 +17,15 @@ Below are visuals demonstrating key aspects of the project:
 3. **Legitimate Detection Example**: An example of the application detecting a Legitimate email.
 ![Legitimate Detection Example](https://github.com/KORAY-AMAN-ASLAN/cource_softwareSecurity/blob/main/legit.png)
 
-   ## Model Comparison Analysis
+## Model Comparison Analysis
 
 A crucial part of this project involved conducting a comparative analysis of various Machine Learning models to assess their efficacy in detecting phishing emails. By leveraging the capabilities of Logistic Regression, Random Forest, and Gradient Boosting models, we could visualize and evaluate their performance side by side.
 
 ### Comparative Analysis Plot
 
-The graph below illustrates the comparative performance of each model, highlighting their success rates in accurately classifying emails. This visual analysis not only aids in selecting the most effective model for our application but also provides insights into the strengths and weaknesses of each approach.
+The graph below illustrates the comparative performance of each model, highlighting their success rates in accurately classifying emails. 
  **Comparative Analysis Plot**: Visualization of the comparative analysis between different ML models.
 ![Comparative Analysis Plot](https://github.com/KORAY-AMAN-ASLAN/cource_softwareSecurity/blob/main/graph.png)
 
-This analysis plays a pivotal role in refining our phishing detection system, ensuring that we utilize the most reliable model to protect users from cybersecurity threats effectively.
+
 
