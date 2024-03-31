@@ -1,24 +1,20 @@
-/* Overall body and layout settings */
 body, html {
-    font-family: Arial, Helvetica, sans-serif; /* Simple, readable font */
-    background-color: #ffffff; /* Bright background for better contrast */
-    color: #000000; /* High contrast text color */
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
     margin: 0;
     padding: 20px;
-    line-height: 1.5; /* Increased line height for readability */
-    letter-spacing: 0.12em; /* Increased letter spacing */
+    line-height: 1.5;
+    letter-spacing: 0.12em;
 }
 
-/* High visibility focus indicators */
 a, input, textarea, button {
-    outline: 3px solid #ffbf00; /* Bright outline for high visibility */
-    /* Added for removing default focus outline on Chrome */
+    outline: 3px solid #ffbf00;
     outline-offset: 2px;
 }
 
-/* Main container for centered alignment */
 .container {
-    background-color: #eeeeee; /* Light gray for soft contrast */
+    background-color: #eeeeee;
     width: 80%;
     max-width: 600px;
     margin: 0 auto;
@@ -35,11 +31,10 @@ header {
 }
 
 header h1 {
-    color: #0056b3; /* Accessible blue for headings */
+    color: #0056b3;
     font-size: 24px;
 }
 
-/* Styling form groups for labels and inputs */
 .form-group label {
     display: block;
     margin-bottom: .5em;
@@ -59,7 +54,6 @@ header h1 {
     border-color: #0056b3;
 }
 
-/* Responsive design adjustments */
 @media (max-width: 768px) {
     .container {
         width: 95%;
@@ -71,9 +65,8 @@ header h1 {
     }
 }
 
-/* Additional styles for buttons and links */
 button, nav a {
-    background-color: #007bff; /* Accessible blue for buttons */
+    background-color: #007bff;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -86,70 +79,61 @@ button, nav a {
 }
 
 button:hover, nav a:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
 
-/* Analyzing Message Styles */
 #analyzingMessage {
-    display: none; /* Initially hidden */
-    position: fixed; /* Positioned relative to the viewport */
-    width: 70%; /* Adjusted width */
-    height: 10%; /* Adjusted height */
-    max-width: 500px; /* Ensures message box is not too wide */
+    display: none;
+    position: fixed;
+    width: 70%;
+    height: 10%;
+    max-width: 500px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centering the box */
+    transform: translate(-50%, -50%);
     z-index: 1000;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    text-align: center; /* Text centered inside the box */
-    font-weight: bold; /* Make text bold */
-
-    /* Flexbox for vertical and horizontal alignment */
+    text-align: center;
+    font-weight: bold;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column; /* Stack children vertically */
-
-    /* Additional styles for bolder text */
-    font-size: larger; /* Optional: Increase font size for more emphasis */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-/* Result Styles */
 #result {
-    display: none; /* Initially hidden */
-    position: fixed; /* Positioned relative to the viewport */
-    width: 79%; /* Adjusted width */
-    max-width: 700px; /* Adjusts max width */
+    display: none;
+    position: fixed;
+    width: 79%;
+    max-width: 700px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centering the box */
+    transform: translate(-50%, -50%);
     z-index: 1000;
     background-color: #f9f9f9;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 6px 8px rgba(0,0,0,0.1);
-    text-align: left; /* Text and elements aligned to the left */
-    /* Initial state for fade-in effect */
-    opacity: 0; /* Make it fully transparent initially */
-    transition: visibility 0s, opacity 0.5s linear; /* Adjust timing as needed */
+    text-align: left;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
 }
 
-/* Additional Style Adjustments */
 .bold-text {
-    font-weight: bold; /* Ensures specified texts are bolder */
+    font-weight: bold;
 }
 
 #resultProbability {
     color: red;
-    font-weight: bold; /* Ensures probability text is bold and colored */
+    font-weight: bold;
 }
 
 nav a {
-    margin-top: 20px; /* Adjusts spacing above 'Try again' link */
-    display: block; /* Ensures link is block-level for better control */
+    margin-top: 20px;
+    display: block;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;

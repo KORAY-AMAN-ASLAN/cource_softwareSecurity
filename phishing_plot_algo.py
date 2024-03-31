@@ -31,6 +31,13 @@ offering valuable perspectives on model performance, reliability, and suitabilit
 
 This approach not only highlights the practical application of ML in identifying phishing attempts but also showcases,
  the nuanced capabilities of different models, contributing to the development of effective, AI-driven solutions for email security.
+  Authour:  Koray Aman Arabzadeh
+ Cource: Mjukvarusäkerhet, Software Security ,  Mittuniversitetet
+ Year: 2024-04-01
+
+ Video can be found here: https://www.youtube.com/watch?v=-3TfoUi6oTk
+
+
 """
 
 

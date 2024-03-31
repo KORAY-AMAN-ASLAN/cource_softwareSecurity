@@ -56,11 +56,11 @@ Overall, this script exemplifies a practical application of combining NLP and ML
  within a web-based interface, showcasing a pipeline from model training to real-time prediction serving.
 
 
- Authour:
- Koray Aman Arabzadeh
- Cource: Mjukvarusäkerhet Mittuniversitetet
- Year: 2024-03-12
+ Authour: Koray Aman Arabzadeh
+ Cource: Mjukvarusäkerhet, Software Security ,  Mittuniversitetet
+ Year: 2024-04-01
 
+Video can be found here: https://www.youtube.com/watch?v=-3TfoUi6oTk
 """
 
 
