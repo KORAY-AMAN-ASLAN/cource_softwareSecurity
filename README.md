@@ -1,70 +1,45 @@
-# Email Phishing Classification with Flask Web Application
+# Cybersecurity Project: NLP and ML for Email Phishing Detection
 
-This Python script is designed to create a web application using Flask that classifies email text as either legitimate or phishing. It utilizes machine learning models that have been pre-trained to identify characteristics of phishing attempts within email content. The script demonstrates how to load these models, use them for classification, and then serve the results through a web interface. It is an integration of natural language processing (NLP), machine learning (ML), and web development to provide an interactive platform for email classification.
+This project, developed as part of a university cybersecurity course, showcases a Flask web application for classifying email texts. It uses advanced Natural Language Processing (NLP) and Machine Learning (ML) techniques to differentiate between legitimate and phishing emails. The application demonstrates the practical application of these technologies in identifying phishing attempts, highlighting the synergy between NLP, ML, and web development.
 
-## Key Components and Workflow:
+## Project Overview and Workflow:
 
-1. **Library Imports**: The script begins by importing necessary libraries for web development (Flask), data manipulation (Pandas), NLP (spaCy), machine learning (Scikit-learn, joblib for model loading), and visualization (matplotlib for optional plotting).
+1. **Library Imports**: The project starts by importing critical libraries required for web development with Flask, data handling with Pandas, NLP processing with spaCy, ML modeling with Scikit-learn, and optional data visualization with matplotlib.
 
-2. **Model Loading**: Pre-trained models for Logistic Regression, Random Forest, and Gradient Boosting are loaded from disk. These models are assumed to be trained on a dataset where email texts are labeled as 'legitimate' or 'phishing', learning from features extracted via NLP techniques.
+2. **Model Loading**: We use pre-trained ML models like Logistic Regression, Random Forest, and Gradient Boosting. These models have been trained on datasets categorizing emails into 'legitimate' and 'phishing', showcasing how NLP techniques can extract meaningful features for classification.
 
-3. **Email Text Preprocessing**: A function 'preprocess_text' is defined to clean and normalize the input email texts, by removing or replacing URLs and email addresses, optionally filtering out non-alphanumeric characters and stopwords, and normalizing the text case. This preprocessing mimics the treatment of data during the model training phase and is crucial for making accurate predictions.
+3. **Email Text Preprocessing**: The `preprocess_text` function is designed to clean and normalize email texts, crucial for maintaining consistency with the data used to train the models. This step involves removing or replacing URLs, email addresses, and optionally filtering out non-alphanumeric characters and stopwords, along with normalizing text case.
 
-4. **Data Loading and Preprocessing for Training**: Another function 'load_and_preprocess_data' automates the loading of new training data from a CSV file, applying the preprocessing steps to the 'text' column, and ensuring the 'label' column is in the correct format. This functionality is key for retraining models or evaluating their performance on new data.
+4. **Data Handling for Training**: The `load_and_preprocess_data` function simplifies the process of incorporating new training data from CSV files, applying necessary preprocessing to ensure data is correctly formatted for model training and evaluation.
 
-5. **Model Training with Hyperparameter Optimization**: The 'train_model' function orchestrates the training of a specified ML model on the preprocessed dataset, employing GridSearchCV for hyperparameter tuning to optimize model performance. This step is vital for fine-tuning models based on new data or different classification tasks.
+5. **Model Training and Optimization**: Through the `train_model` function, the project not only trains specified ML models on preprocessed datasets but also employs techniques like GridSearchCV for hyperparameter optimization, enhancing model accuracy and performance.
 
-6. **Flask Web Application Setup**: Utilizing Flask, the script sets up a web application that can handle GET and POST requests. GET requests simply render the homepage, while POST requests accept submitted email texts, preprocess them, classify them using the loaded ML models, and return the classification probabilities as phishing or legitimate.
+6. **Flask Web Application Deployment**: The application, built with Flask, is designed to process both GET and POST requests, allowing users to interactively submit email texts for classification and receive predictions on whether the email is phishing or legitimate.
 
-7. **Results Visualization and Output**: Although primarily focused on serving predictions through a web interface, the script includes commented sections that suggest how one might extend it to visualize classification results using matplotlib.
+7. **Visualization and Results Interpretation**: Although the primary focus is on classification, the project includes provisions for extending functionality to visualize results with matplotlib, offering insights into model predictions and performance.
 
-8. **Execution and Model Management**: In the script's main block, there's functionality for loading a dataset, training a model, and saving it to disk. This illustrates how the web application's underlying ML model can be updated or replaced without modifying the core application logic.
+8. **Application and Model Management**: Demonstrating end-to-end application functionality, from data loading and model training to deployment and user interaction, without needing to alter the core application for model updates or replacements.
 
-Overall, this script exemplifies a practical application of combining NLP and ML for email classification within a web-based interface, showcasing a pipeline from model training to real-time prediction serving.
+## Project Insights:
 
-## Additional Details:
+This cybersecurity course project illustrates the potent combination of NLP and ML in a real-world application, emphasizing the critical role of these technologies in enhancing cybersecurity measures against phishing threats.
 
+### Course Details:
+
+- **Project for**: Cybersecurity Course
+- **University**: [University Name]
 - **Author**: Koray Aman Arabzadeh
-- **Course**: Mjukvarusäkerhet, Software Security, Mittuniversitetet
-- **Year**: 2024-04-01
+- **Academic Year**: 2024-04-01
 
-- **Video**: [Link to Video](https://www.youtube.com/watch?v=-3TfoUi6oTk)
+### Additional Resources:
 
-## Email Classification and Model Comparison
+- **Demonstration Video**: [Link to Video](https://www.youtube.com/watch?v=-3TfoUi6oTk)
 
-### Legitimate vs. Phishing Email Classification
+## Running the Project:
 
-The script employs machine learning (ML) models to classify email texts into 'Legitimate' or 'Phishing' categories, focusing on the probability of an email being phishing. Utilizing Logistic Regression, Random Forest, and Gradient Boosting models, it predicts and visualizes the likelihood of phishing for given email examples. This process illustrates how ML can be applied to cybersecurity, specifically in automating the detection and analysis of phishing threats.
+1. Clone the project repository.
+2. Install Python and required libraries via `pip install -r requirements.txt`.
+3. Execute the script with `python app.py` and navigate to `http://localhost:5000` to interact with the web application.
+4. Submit email texts for classification and explore the application's ability to detect phishing attempts through the power of NLP and ML.
 
-#### Workflow:
-
-1. **Load Pre-trained ML Models**: The models, trained on labeled datasets distinguishing phishing from legitimate emails, are loaded to evaluate new texts.
-
-2. **Classify Example Emails**: Example emails are classified into 'Legitimate' and 'Phishing' categories to demonstrate the models' ability to assess and differentiate email types based on learned patterns.
-
-3. **Predict and Convert Probabilities**: For each text, the models predict the probability of being phishing, converted to percentages for interpretation.
-
-4. **Terminal Output and Visualization**: Classification probabilities for each email and model are printed to the terminal, providing immediate insight into each model's evaluation. Additionally, the script generates bar plots to visually compare the models' assessments.
-
-5. **Insightful Comparative Analysis**: Users can analyze the output and visualizations to observe how different models rate the same texts, offering valuable perspectives on model performance, reliability, and suitability for phishing detection tasks.
-
-This approach highlights the practical application of ML in identifying phishing attempts and showcases the nuanced capabilities of different models, contributing to the development of effective, AI-driven solutions for email security.
-
-#### Additional Details:
-
-- **Author**: Koray Aman Arabzadeh
-- **Course**: Mjukvarusäkerhet, Software Security, Mittuniversitetet
-- **Year**: 2024-04-01
-- **Video**: [Link to Video](https://www.youtube.com/watch?v=-3TfoUi6oTk)
-
-## Instructions for Running the Script:
-
-To run the Flask web application and classify email texts:
-
-1. Clone the repository containing the script and models.
-2. Ensure you have Python installed on your system.
-3. Install the required dependencies by running `pip install -r requirements.txt`.
-4. Run the script using `python script_name.py`.
-5. Access the web application through the provided URL in the terminal or by navigating to `http://localhost:5000` in your web browser.
-6. Submit email texts through the provided form to classify them as either legitimate or phishing.
-
+This project underscores the intersection of cybersecurity, NLP, and ML, offering a practical solution to a prevalent cyber threat while serving as a valuable learning tool for students and professionals alike.
