@@ -24,8 +24,8 @@ A crucial part of this project involved conducting a comparative analysis of var
 ### Comparative Analysis Plot
 
 The graph below illustrates the comparative performance of each model, highlighting their success rates in accurately classifying emails. This visual analysis not only aids in selecting the most effective model for our application but also provides insights into the strengths and weaknesses of each approach.
-
-![Comparative Analysis Plot](URL_TO_YOUR_GRAPH_IMAGE)
+ **Comparative Analysis Plot**: Visualization of the comparative analysis between different ML models.
+![Comparative Analysis Plot](https://github.com/KORAY-AMAN-ASLAN/cource_softwareSecurity/blob/main/graph.png)
 
 This analysis plays a pivotal role in refining our phishing detection system, ensuring that we utilize the most reliable model to protect users from cybersecurity threats effectively.
 
