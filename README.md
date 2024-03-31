@@ -1,45 +1,40 @@
-# Email Classification Web App
+# Email Classification Web Application using Flask and Machine Learning
 
-This Python script creates a web application using Flask to classify email text as either legitimate or phishing. It leverages machine learning models pre-trained to detect phishing characteristics within email content. The integration of NLP, ML, and web development offers an interactive platform for email classification.
+This Python script leverages Flask to create a web application that classifies email texts as either legitimate or phishing. It integrates natural language processing (NLP), machine learning (ML), and web development to offer an interactive platform for email classification.
+
+![Flask Form Page](URL_TO_YOUR_FLASK_FORM_IMAGE)
+*The Flask-based web application interface for email classification.*
 
 ## Key Components and Workflow
 
-1. **Library Imports:** Starts with importing necessary libraries for web development, data manipulation, NLP, machine learning, and optional visualization.
+- **Library Imports**: Imports essential libraries for web development, data manipulation, NLP, machine learning, and optional visualization.
 
-2. **Model Loading:** Loads pre-trained models for Logistic Regression, Random Forest, and Gradient Boosting.
+- **Model Loading**: Loads pre-trained models (Logistic Regression, Random Forest, Gradient Boosting) for classification.
 
-3. **Email Text Preprocessing:** Defines a function to clean and normalize email texts for accurate predictions.
+- **Email Text Preprocessing**: Defines a function `preprocess_text` for cleaning and normalizing input email texts.
 
-4. **Data Loading and Preprocessing for Training:** Automates the loading and preprocessing of new training data.
+- **Data Loading and Preprocessing for Training**: Automates loading and preprocessing of new training data.
 
-5. **Model Training with Hyperparameter Optimization:** Details the training process with GridSearchCV for hyperparameter tuning.
+- **Model Training with Hyperparameter Optimization**: `train_model` function for training and optimizing models.
 
-6. **Flask Web Application Setup:** Explains setting up a web application with Flask to handle GET and POST requests for classification.
+- **Flask Web Application Setup**: Sets up a Flask web application to handle requests and serve predictions.
 
-7. **Results Visualization and Output:** Discusses extending the script for result visualization using matplotlib.
+![Phishing Email Attempt](URL_TO_YOUR_PHISHING_EMAIL_ATTEMPT_IMAGE)
+*Example of a phishing email attempt identified by the application.*
 
-8. **Execution and Model Management:** Describes the script’s main block for model training, saving, and web application running.
+![Legitimate Email](URL_TO_YOUR_LEGITIMATE_EMAIL_IMAGE)
+*Example of the application successfully identifying a legitimate email.*
 
-## Author
+## Model Comparison
 
-- Koray Aman Arabzadeh
+The application utilizes various machine learning models to classify emails. Below is a graph comparing their performances:
 
-## Course
+![Model Comparison Graph](URL_TO_YOUR_MODEL_COMPARISON_GRAPH_IMAGE)
+*Comparison of machine learning models based on their ability to classify emails.*
 
-- Mjukvarusäkerhet (Software Security), Mittuniversitetet
+## Getting Started
 
-## Year
+To run this project locally, clone the repository and install the dependencies listed in `requirements.txt`:
 
-- 2024-04-01
-
-## Video Demonstration
-
-- [View the video here](https://www.youtube.com/watch?v=-3TfoUi6oTk)
-
----
-
-# First Script: Flask Web Application
-
-```python
-# Insert the entire content of your Flask web application script here.
-# This script should start with the library imports and end with the Flask app running.
+```bash
+pip install -r requirements.txt
