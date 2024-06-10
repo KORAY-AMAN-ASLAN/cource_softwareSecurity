@@ -54,14 +54,6 @@ def preprocess_text(text, replace_urls=True, replace_emails=True, remove_non_alp
     if replace_emails:
         text = re.sub(r'\S*@\S*\s?', 'emailplaceholder', text)
 
-    # Process the text with spaCy: tokenize, lemmatize, and apply the specified preprocessing steps.
-    """
-    1. Tokenization: Breaking down text into individual elements like words or symbols.
-    2. Lemmatization: Converting words to their base or dictionary form.
-    3. Applying specific preprocessing steps: Removing irrelevant data like stop words, 
-        normalizing text, and other cleaning processes to prepare for analysis.
-        used when user inputs  Subject and Message.
-    """
     doc = nlp(text)
     clean_tokens = [token.lemma_.lower() if lower_case else token.lemma_ for token in doc if
                     (not remove_stopwords or not token.is_stop) and (not remove_non_alpha or token.is_alpha)]
@@ -85,13 +77,6 @@ def load_and_preprocess_data(filename='data.csv'):
 
 # Train a machine learning model using the preprocessed dataset.
 def train_model(dataset, model_type='logistic_regression'):
-    """
-    This function encapsulates the process of training a machine learning model specifically for text data,
-    demonstrating how various machine learning algorithms can be applied and tuned for tasks such as text classification.
-    It focuses on automating the analysis and categorization of textual data, essential for applications like sentiment analysis,
-    topic detection, spam identification, and more. The function includes steps for model selection, hyperparameter tuning,
-    and evaluation to ensure the best model performance.
-    """
 
     # Split the dataset into training and testing sets to evaluate the model on unseen data.
     X = dataset['text']
