@@ -3,13 +3,6 @@ This Python script is designed to create a web application using Flask that clas
  or phishing.
 It utilizes machine learning models that have been pre-trained to identify characteristics of phishing attempts within,
 email content.
-The script demonstrates how to load these models, use them for classification, and then serve the results through a web,
- interface. It is an integration of natural language processing (NLP), machine learning (ML),
-and web development to provide an interactive platform for email classification.
-
-Overall, this script exemplifies a practical application of combining NLP and ML for email classification,
- within a web-based interface, showcasing a pipeline from model training to real-time prediction serving.
-
 
  Authour: Koray Aman Arabzadeh
  Cource: Mjukvarusäkerhet, Software Security ,  Mittuniversitetet
